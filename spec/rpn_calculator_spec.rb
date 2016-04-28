@@ -24,4 +24,12 @@ describe RpnCalculator do
 
     expect(rpn_calculator.evaluate("-")).to eq(1)
   end
+
+  it "returns the correct value when multipling" do
+    rpn_calculator = RpnCalculator.new
+    rpn_calculator.evaluate("2")
+    rpn_calculator.evaluate("2")
+
+    expect(rpn_calculator.evaluate("*")).to eq(4)
+  end
 end
