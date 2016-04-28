@@ -16,6 +16,13 @@ describe RpnCalculator do
     expect(rpn_calculator.evaluate("+")).to eq(3)
   end
 
+  it "returns the correct decimal value when adding" do
+    rpn_calculator.evaluate("3.5")
+    rpn_calculator.evaluate("2")
+
+    expect(rpn_calculator.evaluate("+")).to eq(5.5)
+  end
+
   it "returns the correct value when subtracting" do
     rpn_calculator.evaluate("3")
     rpn_calculator.evaluate("2")
@@ -23,7 +30,7 @@ describe RpnCalculator do
     expect(rpn_calculator.evaluate("-")).to eq(1)
   end
 
-  it "returns the correct value when multipling" do
+  it "returns the correct value when multiplying" do
     rpn_calculator.evaluate("2")
     rpn_calculator.evaluate("2")
 
