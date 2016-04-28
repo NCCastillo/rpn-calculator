@@ -16,4 +16,12 @@ describe RpnCalculator do
 
     expect(rpn_calculator.evaluate("+")).to eq(3)
   end
+
+  it "returns the correct value when subtracting" do
+    rpn_calculator = RpnCalculator.new
+    rpn_calculator.evaluate("3")
+    rpn_calculator.evaluate("2")
+
+    expect(rpn_calculator.evaluate("-")).to eq(1)
+  end
 end

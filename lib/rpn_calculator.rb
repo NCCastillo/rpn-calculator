@@ -16,6 +16,11 @@ class RpnCalculator
           value_1 = rpn_store.pop
 
           rpn_store << value_1 + value_2
+        when "-"
+          value_2 = rpn_store.pop
+          value_1 = rpn_store.pop
+
+          rpn_store << value_1 - value_2
       end
     end
 
