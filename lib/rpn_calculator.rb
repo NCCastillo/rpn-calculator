@@ -10,8 +10,8 @@ class RpnCalculator
     input_store.each do |item|
       case item
         when /[0-9]/
-          rpn_store << item.to_i
-        when "+", "-", "*"
+          rpn_store << item.to_f
+        when "+", "-", "*", "/"
           calculate_and_add_to_store(item)
       end
     end

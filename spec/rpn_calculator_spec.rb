@@ -29,4 +29,18 @@ describe RpnCalculator do
 
     expect(rpn_calculator.evaluate("*")).to eq(4)
   end
+
+  it "returns the correct value when dividing " do
+    rpn_calculator.evaluate("2")
+    rpn_calculator.evaluate("2")
+
+    expect(rpn_calculator.evaluate("/")).to eq(1)
+  end
+
+  it "returns the correct decimal value when dividing" do
+    rpn_calculator.evaluate("7")
+    rpn_calculator.evaluate("2")
+
+    expect(rpn_calculator.evaluate("/")).to eq(3.5)
+  end
 end
