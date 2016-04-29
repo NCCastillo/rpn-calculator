@@ -13,9 +13,12 @@ class RpnCalculator
           rpn_store << item.to_f
         when "+", "-", "*", "/"
           calculate_and_add_to_store(item)
+        else
+          raise "Operation cannot be performed"
       end
     end
 
+    input_store.clear
     rpn_store.last
   end
 
@@ -24,6 +27,8 @@ class RpnCalculator
   attr_reader :input_store, :rpn_store
 
   def calculate_and_add_to_store(operator)
+    raise "Operation cannot be performed" if rpn_store.size < 2
+
     value_2 = rpn_store.pop
     value_1 = rpn_store.pop
 

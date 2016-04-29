@@ -60,4 +60,13 @@ describe RpnCalculator do
 
     expect(rpn_calculator.evaluate("+")).to eq(11)
   end
+
+  it "raises error when wrong operation is performed", focus: true do
+    rpn_calculator.evaluate("8")
+    expect { rpn_calculator.evaluate("+") }.to raise_error(RuntimeError, "Operation cannot be performed")
+  end
+
+  it "raises error when invalid input is given" do
+    expect { rpn_calculator.evaluate("e") }.to raise_error(RuntimeError, "Operation cannot be performed")
+  end
 end
