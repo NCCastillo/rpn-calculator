@@ -5,7 +5,7 @@ Make sure to `bundle install`
 From the command line run:
 
 ```
-$ ruby run_rpn
+$ ruby run_rpn.rb
 
 > 1
 1
