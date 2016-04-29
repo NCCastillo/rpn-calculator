@@ -50,4 +50,14 @@ describe RpnCalculator do
 
     expect(rpn_calculator.evaluate("/")).to eq(3.5)
   end
+
+  it "returns the correct value when calculating with multiple operators" do
+    # -3 -2 * 5 +
+    rpn_calculator.evaluate("-3")
+    rpn_calculator.evaluate("-2")
+    rpn_calculator.evaluate("*")
+    rpn_calculator.evaluate("5")
+
+    expect(rpn_calculator.evaluate("+")).to eq(11)
+  end
 end
