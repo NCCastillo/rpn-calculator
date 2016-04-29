@@ -13,6 +13,7 @@ class RpnCalculator
         raise "Operation cannot be performed"
     end
 
+    format_running_number(rpn_stack.last)
   end
 
   private
@@ -31,5 +32,8 @@ class RpnCalculator
   def add_input_to_stack(input)
     rpn_stack << input.to_f
   end
+
+  def format_running_number(number)
+    "%g" % ("%.2f" % number)
   end
 end
